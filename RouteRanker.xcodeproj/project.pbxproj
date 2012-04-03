@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15221671152AB0CF00FFFC82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221670152AB0CF00FFFC82 /* UIKit.framework */; };
+		15221673152AB0CF00FFFC82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221672152AB0CF00FFFC82 /* Foundation.framework */; };
+		15221675152AB0CF00FFFC82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221674152AB0CF00FFFC82 /* CoreGraphics.framework */; };
+		1522167B152AB0CF00FFFC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15221679152AB0CF00FFFC82 /* InfoPlist.strings */; };
+		1522167D152AB0CF00FFFC82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1522167C152AB0CF00FFFC82 /* main.m */; };
+		15221681152AB0CF00FFFC82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15221680152AB0CF00FFFC82 /* AppDelegate.m */; };
+		15221684152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15221682152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard */; };
+		15221687152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15221685152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard */; };
+		1522168A152AB0CF00FFFC82 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15221689152AB0CF00FFFC82 /* FirstViewController.m */; };
+		1522168C152AB0CF00FFFC82 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1522168B152AB0CF00FFFC82 /* first.png */; };
+		1522168E152AB0CF00FFFC82 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1522168D152AB0CF00FFFC82 /* first@2x.png */; };
+		15221691152AB0CF00FFFC82 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15221690152AB0CF00FFFC82 /* SecondViewController.m */; };
+		15221693152AB0CF00FFFC82 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 15221692152AB0CF00FFFC82 /* second.png */; };
+		15221695152AB0CF00FFFC82 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15221694152AB0CF00FFFC82 /* second@2x.png */; };
+		1522169D152AB0CF00FFFC82 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1522169C152AB0CF00FFFC82 /* SenTestingKit.framework */; };
+		1522169E152AB0CF00FFFC82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221670152AB0CF00FFFC82 /* UIKit.framework */; };
+		1522169F152AB0CF00FFFC82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221672152AB0CF00FFFC82 /* Foundation.framework */; };
+		152216A7152AB0CF00FFFC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 152216A5152AB0CF00FFFC82 /* InfoPlist.strings */; };
+		152216AA152AB0CF00FFFC82 /* RouteRankerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		152216A0152AB0CF00FFFC82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15221663152AB0CF00FFFC82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1522166B152AB0CF00FFFC82;
+			remoteInfo = RouteRanker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1522166C152AB0CF00FFFC82 /* RouteRanker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteRanker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15221670152AB0CF00FFFC82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		15221672152AB0CF00FFFC82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		15221674152AB0CF00FFFC82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		15221678152AB0CF00FFFC82 /* RouteRanker-Info.plist */ = {isa = PBXFileReference; path = "RouteRanker-Info.plist"; sourceTree = "<group>"; };
+		1522167A152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1522167C152AB0CF00FFFC82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1522167E152AB0CF00FFFC82 /* RouteRanker-Prefix.pch */ = {isa = PBXFileReference; path = "RouteRanker-Prefix.pch"; sourceTree = "<group>"; };
+		1522167F152AB0CF00FFFC82 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		15221680152AB0CF00FFFC82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		15221683152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		15221686152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		15221688152AB0CF00FFFC82 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		15221689152AB0CF00FFFC82 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1522168B152AB0CF00FFFC82 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		1522168D152AB0CF00FFFC82 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		1522168F152AB0CF00FFFC82 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		15221690152AB0CF00FFFC82 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		15221692152AB0CF00FFFC82 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		15221694152AB0CF00FFFC82 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		1522169B152AB0CF00FFFC82 /* RouteRankerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteRankerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1522169C152AB0CF00FFFC82 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		152216A4152AB0CF00FFFC82 /* RouteRankerTests-Info.plist */ = {isa = PBXFileReference; path = "RouteRankerTests-Info.plist"; sourceTree = "<group>"; };
+		152216A6152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		152216A8152AB0CF00FFFC82 /* RouteRankerTests.h */ = {isa = PBXFileReference; path = RouteRankerTests.h; sourceTree = "<group>"; };
+		152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteRankerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15221669152AB0CF00FFFC82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15221671152AB0CF00FFFC82 /* UIKit.framework in Frameworks */,
+				15221673152AB0CF00FFFC82 /* Foundation.framework in Frameworks */,
+				15221675152AB0CF00FFFC82 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15221697152AB0CF00FFFC82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1522169D152AB0CF00FFFC82 /* SenTestingKit.framework in Frameworks */,
+				1522169E152AB0CF00FFFC82 /* UIKit.framework in Frameworks */,
+				1522169F152AB0CF00FFFC82 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15221661152AB0CF00FFFC82 = {
+			isa = PBXGroup;
+			children = (
+				15221676152AB0CF00FFFC82 /* RouteRanker */,
+				152216A2152AB0CF00FFFC82 /* RouteRankerTests */,
+				1522166F152AB0CF00FFFC82 /* Frameworks */,
+				1522166D152AB0CF00FFFC82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1522166D152AB0CF00FFFC82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1522166C152AB0CF00FFFC82 /* RouteRanker.app */,
+				1522169B152AB0CF00FFFC82 /* RouteRankerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1522166F152AB0CF00FFFC82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15221670152AB0CF00FFFC82 /* UIKit.framework */,
+				15221672152AB0CF00FFFC82 /* Foundation.framework */,
+				15221674152AB0CF00FFFC82 /* CoreGraphics.framework */,
+				1522169C152AB0CF00FFFC82 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15221676152AB0CF00FFFC82 /* RouteRanker */ = {
+			isa = PBXGroup;
+			children = (
+				1522167F152AB0CF00FFFC82 /* AppDelegate.h */,
+				15221680152AB0CF00FFFC82 /* AppDelegate.m */,
+				15221682152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard */,
+				15221685152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard */,
+				15221688152AB0CF00FFFC82 /* FirstViewController.h */,
+				15221689152AB0CF00FFFC82 /* FirstViewController.m */,
+				1522168B152AB0CF00FFFC82 /* first.png */,
+				1522168D152AB0CF00FFFC82 /* first@2x.png */,
+				1522168F152AB0CF00FFFC82 /* SecondViewController.h */,
+				15221690152AB0CF00FFFC82 /* SecondViewController.m */,
+				15221692152AB0CF00FFFC82 /* second.png */,
+				15221694152AB0CF00FFFC82 /* second@2x.png */,
+				15221677152AB0CF00FFFC82 /* Supporting Files */,
+			);
+			path = RouteRanker;
+			sourceTree = "<group>";
+		};
+		15221677152AB0CF00FFFC82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15221678152AB0CF00FFFC82 /* RouteRanker-Info.plist */,
+				15221679152AB0CF00FFFC82 /* InfoPlist.strings */,
+				1522167C152AB0CF00FFFC82 /* main.m */,
+				1522167E152AB0CF00FFFC82 /* RouteRanker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		152216A2152AB0CF00FFFC82 /* RouteRankerTests */ = {
+			isa = PBXGroup;
+			children = (
+				152216A8152AB0CF00FFFC82 /* RouteRankerTests.h */,
+				152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */,
+				152216A3152AB0CF00FFFC82 /* Supporting Files */,
+			);
+			path = RouteRankerTests;
+			sourceTree = "<group>";
+		};
+		152216A3152AB0CF00FFFC82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				152216A4152AB0CF00FFFC82 /* RouteRankerTests-Info.plist */,
+				152216A5152AB0CF00FFFC82 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1522166B152AB0CF00FFFC82 /* RouteRanker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152216AD152AB0CF00FFFC82 /* Build configuration list for PBXNativeTarget "RouteRanker" */;
+			buildPhases = (
+				15221668152AB0CF00FFFC82 /* Sources */,
+				15221669152AB0CF00FFFC82 /* Frameworks */,
+				1522166A152AB0CF00FFFC82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RouteRanker;
+			productName = RouteRanker;
+			productReference = 1522166C152AB0CF00FFFC82 /* RouteRanker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1522169A152AB0CF00FFFC82 /* RouteRankerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152216B0152AB0CF00FFFC82 /* Build configuration list for PBXNativeTarget "RouteRankerTests" */;
+			buildPhases = (
+				15221696152AB0CF00FFFC82 /* Sources */,
+				15221697152AB0CF00FFFC82 /* Frameworks */,
+				15221698152AB0CF00FFFC82 /* Resources */,
+				15221699152AB0CF00FFFC82 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				152216A1152AB0CF00FFFC82 /* PBXTargetDependency */,
+			);
+			name = RouteRankerTests;
+			productName = RouteRankerTests;
+			productReference = 1522169B152AB0CF00FFFC82 /* RouteRankerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15221663152AB0CF00FFFC82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 15221666152AB0CF00FFFC82 /* Build configuration list for PBXProject "RouteRanker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 15221661152AB0CF00FFFC82;
+			productRefGroup = 1522166D152AB0CF00FFFC82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1522166B152AB0CF00FFFC82 /* RouteRanker */,
+				1522169A152AB0CF00FFFC82 /* RouteRankerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1522166A152AB0CF00FFFC82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1522167B152AB0CF00FFFC82 /* InfoPlist.strings in Resources */,
+				15221684152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard in Resources */,
+				15221687152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard in Resources */,
+				1522168C152AB0CF00FFFC82 /* first.png in Resources */,
+				1522168E152AB0CF00FFFC82 /* first@2x.png in Resources */,
+				15221693152AB0CF00FFFC82 /* second.png in Resources */,
+				15221695152AB0CF00FFFC82 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15221698152AB0CF00FFFC82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152216A7152AB0CF00FFFC82 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15221699152AB0CF00FFFC82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15221668152AB0CF00FFFC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1522167D152AB0CF00FFFC82 /* main.m in Sources */,
+				15221681152AB0CF00FFFC82 /* AppDelegate.m in Sources */,
+				1522168A152AB0CF00FFFC82 /* FirstViewController.m in Sources */,
+				15221691152AB0CF00FFFC82 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15221696152AB0CF00FFFC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152216AA152AB0CF00FFFC82 /* RouteRankerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		152216A1152AB0CF00FFFC82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1522166B152AB0CF00FFFC82 /* RouteRanker */;
+			targetProxy = 152216A0152AB0CF00FFFC82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15221679152AB0CF00FFFC82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1522167A152AB0CF00FFFC82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		15221682152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15221683152AB0CF00FFFC82 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		15221685152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15221686152AB0CF00FFFC82 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		152216A5152AB0CF00FFFC82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152216A6152AB0CF00FFFC82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		152216AB152AB0CF00FFFC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		152216AC152AB0CF00FFFC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		152216AE152AB0CF00FFFC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouteRanker/RouteRanker-Prefix.pch";
+				INFOPLIST_FILE = "RouteRanker/RouteRanker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		152216AF152AB0CF00FFFC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouteRanker/RouteRanker-Prefix.pch";
+				INFOPLIST_FILE = "RouteRanker/RouteRanker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		152216B1152AB0CF00FFFC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RouteRanker.app/RouteRanker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouteRanker/RouteRanker-Prefix.pch";
+				INFOPLIST_FILE = "RouteRankerTests/RouteRankerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		152216B2152AB0CF00FFFC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RouteRanker.app/RouteRanker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouteRanker/RouteRanker-Prefix.pch";
+				INFOPLIST_FILE = "RouteRankerTests/RouteRankerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15221666152AB0CF00FFFC82 /* Build configuration list for PBXProject "RouteRanker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152216AB152AB0CF00FFFC82 /* Debug */,
+				152216AC152AB0CF00FFFC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152216AD152AB0CF00FFFC82 /* Build configuration list for PBXNativeTarget "RouteRanker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152216AE152AB0CF00FFFC82 /* Debug */,
+				152216AF152AB0CF00FFFC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		152216B0152AB0CF00FFFC82 /* Build configuration list for PBXNativeTarget "RouteRankerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152216B1152AB0CF00FFFC82 /* Debug */,
+				152216B2152AB0CF00FFFC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15221663152AB0CF00FFFC82 /* Project object */;
+}
