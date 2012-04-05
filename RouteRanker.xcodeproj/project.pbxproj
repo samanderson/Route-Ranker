@@ -26,6 +26,8 @@
 		1522169F152AB0CF00FFFC82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15221672152AB0CF00FFFC82 /* Foundation.framework */; };
 		152216A7152AB0CF00FFFC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 152216A5152AB0CF00FFFC82 /* InfoPlist.strings */; };
 		152216AA152AB0CF00FFFC82 /* RouteRankerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */; };
+		152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B3152B6E2B00FFFC82 /* MapKit.framework */; };
+		152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B5152B6E3E00FFFC82 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,28 +45,30 @@
 		15221670152AB0CF00FFFC82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		15221672152AB0CF00FFFC82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		15221674152AB0CF00FFFC82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		15221678152AB0CF00FFFC82 /* RouteRanker-Info.plist */ = {isa = PBXFileReference; path = "RouteRanker-Info.plist"; sourceTree = "<group>"; };
+		15221678152AB0CF00FFFC82 /* RouteRanker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RouteRanker-Info.plist"; sourceTree = "<group>"; };
 		1522167A152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1522167C152AB0CF00FFFC82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1522167E152AB0CF00FFFC82 /* RouteRanker-Prefix.pch */ = {isa = PBXFileReference; path = "RouteRanker-Prefix.pch"; sourceTree = "<group>"; };
-		1522167F152AB0CF00FFFC82 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		1522167E152AB0CF00FFFC82 /* RouteRanker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RouteRanker-Prefix.pch"; sourceTree = "<group>"; };
+		1522167F152AB0CF00FFFC82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		15221680152AB0CF00FFFC82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		15221683152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		15221686152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		15221688152AB0CF00FFFC82 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		15221688152AB0CF00FFFC82 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		15221689152AB0CF00FFFC82 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		1522168B152AB0CF00FFFC82 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		1522168D152AB0CF00FFFC82 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		1522168F152AB0CF00FFFC82 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		1522168F152AB0CF00FFFC82 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		15221690152AB0CF00FFFC82 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		15221692152AB0CF00FFFC82 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		15221694152AB0CF00FFFC82 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		1522169B152AB0CF00FFFC82 /* RouteRankerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteRankerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1522169C152AB0CF00FFFC82 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		152216A4152AB0CF00FFFC82 /* RouteRankerTests-Info.plist */ = {isa = PBXFileReference; path = "RouteRankerTests-Info.plist"; sourceTree = "<group>"; };
+		152216A4152AB0CF00FFFC82 /* RouteRankerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RouteRankerTests-Info.plist"; sourceTree = "<group>"; };
 		152216A6152AB0CF00FFFC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		152216A8152AB0CF00FFFC82 /* RouteRankerTests.h */ = {isa = PBXFileReference; path = RouteRankerTests.h; sourceTree = "<group>"; };
+		152216A8152AB0CF00FFFC82 /* RouteRankerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteRankerTests.h; sourceTree = "<group>"; };
 		152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteRankerTests.m; sourceTree = "<group>"; };
+		152216B3152B6E2B00FFFC82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		152216B5152B6E3E00FFFC82 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */,
+				152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */,
 				15221671152AB0CF00FFFC82 /* UIKit.framework in Frameworks */,
 				15221673152AB0CF00FFFC82 /* Foundation.framework in Frameworks */,
 				15221675152AB0CF00FFFC82 /* CoreGraphics.framework in Frameworks */,
@@ -94,6 +100,8 @@
 		15221661152AB0CF00FFFC82 = {
 			isa = PBXGroup;
 			children = (
+				152216B5152B6E3E00FFFC82 /* CoreLocation.framework */,
+				152216B3152B6E2B00FFFC82 /* MapKit.framework */,
 				15221676152AB0CF00FFFC82 /* RouteRanker */,
 				152216A2152AB0CF00FFFC82 /* RouteRankerTests */,
 				1522166F152AB0CF00FFFC82 /* Frameworks */,
