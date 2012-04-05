@@ -28,6 +28,7 @@
 		152216AA152AB0CF00FFFC82 /* RouteRankerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */; };
 		152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B3152B6E2B00FFFC82 /* MapKit.framework */; };
 		152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B5152B6E3E00FFFC82 /* CoreLocation.framework */; };
+		152216B9152D41CE00FFFC82 /* NSObject+MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteRankerTests.m; sourceTree = "<group>"; };
 		152216B3152B6E2B00FFFC82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		152216B5152B6E3E00FFFC82 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		152216B7152D41CE00FFFC82 /* NSObject+MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MapViewController.h"; sourceTree = "<group>"; };
+		152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MapViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 		15221676152AB0CF00FFFC82 /* RouteRanker */ = {
 			isa = PBXGroup;
 			children = (
+				152216B7152D41CE00FFFC82 /* NSObject+MapViewController.h */,
+				152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */,
 				1522167F152AB0CF00FFFC82 /* AppDelegate.h */,
 				15221680152AB0CF00FFFC82 /* AppDelegate.m */,
 				15221682152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard */,
@@ -294,6 +299,7 @@
 				15221681152AB0CF00FFFC82 /* AppDelegate.m in Sources */,
 				1522168A152AB0CF00FFFC82 /* FirstViewController.m in Sources */,
 				15221691152AB0CF00FFFC82 /* SecondViewController.m in Sources */,
+				152216B9152D41CE00FFFC82 /* NSObject+MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
