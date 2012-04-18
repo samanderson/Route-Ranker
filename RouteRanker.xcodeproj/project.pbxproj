@@ -28,7 +28,9 @@
 		152216AA152AB0CF00FFFC82 /* RouteRankerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */; };
 		152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B3152B6E2B00FFFC82 /* MapKit.framework */; };
 		152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B5152B6E3E00FFFC82 /* CoreLocation.framework */; };
-		152216B9152D41CE00FFFC82 /* NSObject+MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */; };
+		152216B9152D41CE00FFFC82 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216B8152D41CE00FFFC82 /* MapViewController.m */; };
+		15C29B61153658C5009901F9 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C29B60153658C5009901F9 /* Route.m */; };
+		15C29B65153674FC009901F9 /* RouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C29B64153674FC009901F9 /* RouteView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +72,13 @@
 		152216A9152AB0CF00FFFC82 /* RouteRankerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteRankerTests.m; sourceTree = "<group>"; };
 		152216B3152B6E2B00FFFC82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		152216B5152B6E3E00FFFC82 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		152216B7152D41CE00FFFC82 /* NSObject+MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MapViewController.h"; sourceTree = "<group>"; };
-		152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MapViewController.m"; sourceTree = "<group>"; };
+		152216B7152D41CE00FFFC82 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		152216B8152D41CE00FFFC82 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		1583D0DA153713F40017154A /* test2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = test2.gpx; path = ../../../Downloads/test2.gpx; sourceTree = "<group>"; };
+		15C29B5F153658C5009901F9 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = ../Route.h; sourceTree = "<group>"; };
+		15C29B60153658C5009901F9 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = ../Route.m; sourceTree = "<group>"; };
+		15C29B63153674FC009901F9 /* RouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteView.h; sourceTree = "<group>"; };
+		15C29B64153674FC009901F9 /* RouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +110,7 @@
 		15221661152AB0CF00FFFC82 = {
 			isa = PBXGroup;
 			children = (
+				1583D0DA153713F40017154A /* test2.gpx */,
 				152216B5152B6E3E00FFFC82 /* CoreLocation.framework */,
 				152216B3152B6E2B00FFFC82 /* MapKit.framework */,
 				15221676152AB0CF00FFFC82 /* RouteRanker */,
@@ -135,8 +143,12 @@
 		15221676152AB0CF00FFFC82 /* RouteRanker */ = {
 			isa = PBXGroup;
 			children = (
-				152216B7152D41CE00FFFC82 /* NSObject+MapViewController.h */,
-				152216B8152D41CE00FFFC82 /* NSObject+MapViewController.m */,
+				15C29B5F153658C5009901F9 /* Route.h */,
+				15C29B60153658C5009901F9 /* Route.m */,
+				15C29B63153674FC009901F9 /* RouteView.h */,
+				15C29B64153674FC009901F9 /* RouteView.m */,
+				152216B7152D41CE00FFFC82 /* MapViewController.h */,
+				152216B8152D41CE00FFFC82 /* MapViewController.m */,
 				1522167F152AB0CF00FFFC82 /* AppDelegate.h */,
 				15221680152AB0CF00FFFC82 /* AppDelegate.m */,
 				15221682152AB0CF00FFFC82 /* MainStoryboard_iPhone.storyboard */,
@@ -299,7 +311,9 @@
 				15221681152AB0CF00FFFC82 /* AppDelegate.m in Sources */,
 				1522168A152AB0CF00FFFC82 /* FirstViewController.m in Sources */,
 				15221691152AB0CF00FFFC82 /* SecondViewController.m in Sources */,
-				152216B9152D41CE00FFFC82 /* NSObject+MapViewController.m in Sources */,
+				152216B9152D41CE00FFFC82 /* MapViewController.m in Sources */,
+				15C29B61153658C5009901F9 /* Route.m in Sources */,
+				15C29B65153674FC009901F9 /* RouteView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +493,7 @@
 				152216AF152AB0CF00FFFC82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		152216B0152AB0CF00FFFC82 /* Build configuration list for PBXNativeTarget "RouteRankerTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +502,7 @@
 				152216B2152AB0CF00FFFC82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

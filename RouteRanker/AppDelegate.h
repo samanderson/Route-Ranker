@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UIWindow *window;

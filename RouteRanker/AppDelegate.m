@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "MapViewController.h"
 
 @implementation AppDelegate
 
@@ -24,10 +26,12 @@
     UITabBarItem *item4 = [[UITabBarItem alloc] initWithTitle:@"Share" image:nil tag:3];
     NSArray* items = [NSArray arrayWithObjects: item1, item2, item3, item4, nil];
     [tabBarController setItems:items];  */
-    UIViewController* vc1 = [[UIViewController alloc] init];
+    FirstViewController* vc1 = [[FirstViewController alloc] init];
+    
+    MapViewController *mapView = [[MapViewController alloc] init];
     UIViewController * vc2 = [[UIViewController alloc] init];
     UIViewController* vc3 = [[UIViewController alloc] init];
-    NSArray* controllers = [NSArray arrayWithObjects: vc1,vc2,vc3, nil];
+    NSArray* controllers = [NSArray arrayWithObjects: vc1,mapView, vc2,vc3, nil];
     tabBarController.viewControllers = controllers;
     
     window.rootViewController = tabBarController;
