@@ -44,7 +44,7 @@
                                     <action selector="TrackingStarted:" destination="2" eventType="touchUpInside" id="cLp-rP-81l"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="OKQ-Rx-lBX">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" id="OKQ-Rx-lBX">
                                 <rect key="frame" x="62" y="184" width="200" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <segments>

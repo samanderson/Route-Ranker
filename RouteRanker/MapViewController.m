@@ -102,25 +102,27 @@
 }
 - (void) locationManager:(CLLocationManager *) manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    if((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) && (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
-    {
-        if(!route)
+    if(newLocation){
+        if((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) && (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
         {
-            route = [[Route alloc] initWithStartPoint:newLocation];
-            [self.mapView addOverlay:route];
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 2000, 2000);
-            [self.mapView setRegion:region animated:YES];
+            if(!route)
+            {
+                route = [[Route alloc] initWithStartPoint:newLocation];
+                [self.mapView addOverlay:route];
+                MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 2000, 2000);
+                [self.mapView setRegion:region animated:YES];
             
-        }
-        else {
-            MKMapRect updateRect = [route addPoint:newLocation];
-            if(!MKMapRectIsNull(updateRect))
-               {
+            }
+            else {
+                MKMapRect updateRect = [route addPoint:newLocation];
+                if(!MKMapRectIsNull(updateRect))
+                {
                    MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width /self.mapView.visibleMapRect.size.width);
                    CGFloat lineWidth = MKRoadWidthAtZoomScale(currentZoomScale);
                    updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
                    [routeView setNeedsDisplayInMapRect: updateRect];
-               }
+                }
+            }
         }
     }
 }

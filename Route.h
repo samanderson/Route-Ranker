@@ -17,7 +17,7 @@
     NSUInteger pointSpace;
     NSString *name;
     
-    MKMapRect boundingEdges;
+    MKMapRect boundingMapRect;
     
     pthread_rwlock_t rwLock;
     
@@ -33,6 +33,8 @@
 @property (readonly) NSMutableArray *timeArray;
 @property (readonly) NSString *name;
 @property (readonly) NSUInteger numPoints;
+@property (nonatomic, readonly) MKMapRect boundingMapRect;
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 -(void) unlockForReading;
 

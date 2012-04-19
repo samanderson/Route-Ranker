@@ -19,8 +19,9 @@
 
 @implementation RouteView
 
--(void) drawMapRect: (MKMapRect) mapRect
-zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context
+- (void) drawMapRect: (MKMapRect) mapRect
+          zoomScale:(MKZoomScale)zoomScale 
+          inContext:(CGContextRef)context
 {
     Route *route = (Route *) self.overlay;
     CGFloat lineWidth = MKRoadWidthAtZoomScale(zoomScale);
@@ -61,10 +62,10 @@ static BOOL lineIntersectsRect(MKMapPoint p0, MKMapPoint p1, MKMapRect rect)
 
 #define MIN_POINT_DELTA 5.0
 
-- (CGPathRef) newPathForPoints:(MKMapPoint *)points pointCount:(id)numPoints clipRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale
+- (CGPathRef) newPathForPoints:(MKMapPoint *)points pointCount:(NSUInteger)numPoints clipRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale
 {
 
-    if ((unsigned int) numPoints < 2)
+    if (numPoints < 2)
         return NULL;
     CGMutablePathRef path = NULL;
     BOOL needsMove = YES;
@@ -75,7 +76,7 @@ static BOOL lineIntersectsRect(MKMapPoint p0, MKMapPoint p1, MKMapRect rect)
     
     MKMapPoint point, lastPoint = points[0];
     NSUInteger i;
-    for (i =1; i <(unsigned int) numPoints -1; i++)
+    for (i =1; i < numPoints -1; i++)
     {
         point = points[i];  
         double diag = POW2(point.x - lastPoint.x) + POW2(point.y - lastPoint.y);

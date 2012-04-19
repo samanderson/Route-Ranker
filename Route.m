@@ -17,6 +17,7 @@
 @implementation Route
 
 @synthesize points, numPoints, timeArray, name;
+@synthesize coordinate;
 
 -(id) initWithStartPoint:(CLLocation *)loc
 {
@@ -39,14 +40,19 @@
         MKMapSize size = MKMapSizeWorld;
         size.width /= 4.0;
         size.height /=4.0;
-        boundingEdges = MKMapRectMake(center.x,center.y,size.width,size.height); 
+        boundingMapRect = MKMapRectMake(center.x,center.y,size.width,size.height); 
         MKMapRect worldRect = MKMapRectMake(0, 0, MKMapSizeWorld.width, MKMapSizeWorld.height);
-        boundingEdges = MKMapRectIntersection(boundingEdges, worldRect);
+        boundingMapRect = MKMapRectIntersection(boundingMapRect, worldRect);
         
         pthread_rwlock_init(&rwLock, NULL);
     }
     return self;
     
+}
+-(void) dealloc
+{
+    free(points);
+    pthread_rwlock_destroy(&rwLock);
 }
 
 -(CLLocationCoordinate2D) coordinate
@@ -54,13 +60,48 @@
     return MKCoordinateForMapPoint(points[0]);
 }
 
--(MKMapRect) boundingEdges 
+-(MKMapRect) boundingMapRect
 {
-    return boundingEdges;
+    return boundingMapRect;
 }
 -(void) lockForReading
 {
     pthread_rwlock_rdlock(&rwLock);
+}
+
+-(MKMapRect) addCoordinate:(CLLocationCoordinate2D)coord
+{
+    pthread_rwlock_wrlock(&rwLock);
+
+    MKMapPoint newPoint = MKMapPointForCoordinate(coord);
+    MKMapPoint prevPoint = points[numPoints -1];
+
+    CLLocationDistance metersApart = MKMetersBetweenMapPoints(newPoint, prevPoint);
+    MKMapRect updateRect = MKMapRectNull;
+
+    if(metersApart > MINIMUM_DELTA_METERS)
+    {
+    
+        if (pointSpace == numPoints)
+        {
+            pointSpace *= 2;
+            points = realloc(points, sizeof(MKMapPoint) * pointSpace);
+        }   
+        points[numPoints] = newPoint;
+        numPoints++;
+    
+        double minX = MIN(newPoint.x, prevPoint.x);
+        double minY = MIN(newPoint.y, prevPoint.y);
+        double maxX = MAX(newPoint.x, prevPoint.x);
+        double maxY = MAX(newPoint.y, prevPoint.y);
+    
+        updateRect = MKMapRectMake(minX, minY, maxX-minX, maxY- minY);
+    }
+
+
+    pthread_rwlock_unlock(&rwLock);
+
+    return updateRect;
 }
 
 -(MKMapRect) addPoint:(CLLocation *)loc

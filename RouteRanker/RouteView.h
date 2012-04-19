@@ -10,5 +10,8 @@
 #import <MapKit/MapKit.h>
 
 @interface RouteView : MKOverlayView
+{
+
+}
 
 @end
