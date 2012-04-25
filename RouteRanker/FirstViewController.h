@@ -14,21 +14,28 @@
 - (void) toggleTracking;
 - (void) setName: (NSString *)name;
 - (void) setAcc: (CLLocationAccuracy)accuracy;
+- (void) setStart: (CLLocation *)start;
 @end
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UITextFieldDelegate>
 {
     id <ToggleTracking> trackDelegate;
     NSString *routeName;
     BOOL track;
     CLLocationAccuracy accuracy;
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
 }
 
 @property id trackDelegate;
+@property id<CLLocationManagerDelegate> locationDelegate;
 @property (copy) NSString *routeName;
 @property BOOL track;
 @property CLLocationAccuracy accuracy;
-@property (weak, nonatomic) IBOutlet UITextField *routeNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *routeNameText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *GPSAccuracy;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property CLGeocoder *geocoder;
+@property UIGestureRecognizer *tapRecognizer;
 
 @end

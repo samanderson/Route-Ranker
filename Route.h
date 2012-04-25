@@ -31,7 +31,8 @@
 
 @property (readonly) MKMapPoint *points;
 @property (readonly) NSMutableArray *timeArray;
-@property (readonly) NSString *name;
+@property (nonatomic, strong) NSMutableArray *annotations;
+@property (copy) NSString *name;
 @property (readonly) NSUInteger numPoints;
 @property (nonatomic, readonly) MKMapRect boundingMapRect;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;

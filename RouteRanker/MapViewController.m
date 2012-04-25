@@ -7,35 +7,62 @@
 //
 
 #import "MapViewController.h"
-#import "Route.h"
 
 @interface MapViewController() {
-
+    
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
 @implementation MapViewController
-
-@synthesize track;
+@synthesize addPinButton;
+@synthesize routes;
+@synthesize track, mapTitle;
 @synthesize mapView = _mapView;
 @synthesize annotations = _annotations;
-@synthesize routeName;
-@synthesize accuracy;
-@synthesize locationManager;
-
-
+@synthesize routeName, accuracy, currLocation;
 
 
 - (void) toggleTracking {
+    NSLog(@"toggle called");
+    if(track)
+    {
+        NSLog(@"added Route: %@", route);
+        [routes addObject:route];
+        NSLog(@"%@", routes);
+        route = nil;
+        _annotations = nil;
+    }
     track = !track;
 }
 
 
 - (void) setName: (NSString *)name {
-    routeName = name;  
+    routeName = name;
 }
 
+- (void) setStart: (CLLocation *) start {
+    currLocation = start;
+}
+
+- (IBAction)dropPin:(id)sender {
+    UIAlertView *alertView  = [[UIAlertView alloc] initWithTitle:@"New Annotation" message:@"Title" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
+    NSDate* today = [NSDate date];
+    RouteAnnotation* annotation = [[RouteAnnotation alloc] initWithCoordinateAndTime: currLocation.coordinate :today];
+    annotation.title = [[alertView textFieldAtIndex:0] text];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];    
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    NSString *formattedDateString = [dateFormatter stringFromDate:today];
+    annotation.subtitle = formattedDateString;
+    [_annotations addObject:annotation]; 
+    [_mapView addAnnotation:annotation];
+}
 
 - (void) setAcc: (CLLocationAccuracy) a {
     accuracy = a;
@@ -43,25 +70,25 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    NSLog(@"HELLO WORLD");
     [self updateMapView];
-
+    
 }
 
 -(void) viewDidLoad {
-    NSLog(@"view did load");
     [super viewDidLoad];
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.desiredAccuracy = accuracy;
-    [self.locationManager startUpdatingLocation];
 }
 
 -(void) viewDidAppear:(BOOL)animated{
-    NSLog(@"view did appear");
-    if(track){
-    [self updateUserLocation];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.location.coordinate,2000,2000);
-    [self.mapView setRegion:region animated:YES];
+    if (track) {
+        CLLocationCoordinate2D coordinate = currLocation.coordinate;  
+        [self.mapView setCenterCoordinate:coordinate animated:YES];
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currLocation.coordinate,2000,2000);
+        [self.mapView setRegion:region animated:YES];
+        mapTitle.title = routeName;
+        addPinButton.enabled = YES;
+    } else {
+        mapTitle.title = @"Paths";
+        addPinButton.enabled = NO;
     }
 }
 
@@ -71,56 +98,60 @@
         self.mapView.showsUserLocation = YES;
     else 
         self.mapView.showsUserLocation = NO;
+    NSLog(@"self %@",_annotations);
+    NSLog(@"mapView %@",self.mapView.annotations);
     
-        
     if(self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
-    if(self.annotations) [self.mapView addAnnotations:self.annotations];
+    if(_annotations) [self.mapView addAnnotations:_annotations];
 }
+
 -(void) setMapView:(MKMapView *)mapView
 {
     _mapView = mapView;
     [self updateMapView];
 }
 
--(void)setAnnotations:(NSArray *)annotations
+-(void) updateUserLocation {
+    
+}
+
+-(void)setAnnotations:(NSMutableArray *)annotations
 {
     _annotations = annotations;
     [self updateMapView];
 }
--(void) updateUserLocation
-{
-    if(track){
-    MKUserLocation *userLocation = self.mapView.userLocation;
-    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;    
-    [self.mapView setCenterCoordinate:coordinate animated:YES];
-    }
-    
-}
 
 - (void)viewDidUnload {
+    [self setMapTitle:nil];
+    [self setAddPinButton:nil];
     [super viewDidUnload];
 }
 - (void) locationManager:(CLLocationManager *) manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    currLocation = newLocation;
     if(newLocation){
         if((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) && (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
         {
             if(!route)
             {
+                NSLog(@"called");
                 route = [[Route alloc] initWithStartPoint:newLocation];
+                route.name = self.routeName;
+                _annotations = [NSMutableArray arrayWithCapacity:20];
+                route.annotations = _annotations;
                 [self.mapView addOverlay:route];
                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 2000, 2000);
                 [self.mapView setRegion:region animated:YES];
-            
+                
             }
             else {
                 MKMapRect updateRect = [route addPoint:newLocation];
                 if(!MKMapRectIsNull(updateRect))
                 {
-                   MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width /self.mapView.visibleMapRect.size.width);
-                   CGFloat lineWidth = MKRoadWidthAtZoomScale(currentZoomScale);
-                   updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
-                   [routeView setNeedsDisplayInMapRect: updateRect];
+                    MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width /self.mapView.visibleMapRect.size.width);
+                    CGFloat lineWidth = MKRoadWidthAtZoomScale(currentZoomScale);
+                    updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
+                    [routeView setNeedsDisplayInMapRect: updateRect];
                 }
             }
         }
@@ -135,4 +166,25 @@
     }
     return routeView;
 }
+
+- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id<MKAnnotation>) annotation {
+    // reuse a view, if one exists
+    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"pinView"];
+    
+    // create a new view else
+    if (!aView) {
+        aView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinView"];
+    }
+    
+    // now configure the view
+    //aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //[(UIButton*)aView.rightCalloutAccessoryView addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
+    aView.canShowCallout = YES;
+    aView.enabled = YES;
+    //aView.image = [UIImage imageNamed:@"green_pin.png"];
+    aView.centerOffset = CGPointMake(0, -20);
+    
+    return aView;
+}
+
 @end

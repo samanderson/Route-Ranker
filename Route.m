@@ -16,8 +16,8 @@
 
 @implementation Route
 
-@synthesize points, numPoints, timeArray, name;
-@synthesize coordinate;
+@synthesize points, numPoints, timeArray, annotations, name;
+@synthesize coordinate, boundingMapRect;
 
 -(id) initWithStartPoint:(CLLocation *)loc
 {

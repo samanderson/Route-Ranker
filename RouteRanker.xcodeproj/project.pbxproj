@@ -29,6 +29,8 @@
 		152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B3152B6E2B00FFFC82 /* MapKit.framework */; };
 		152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B5152B6E3E00FFFC82 /* CoreLocation.framework */; };
 		152216B9152D41CE00FFFC82 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216B8152D41CE00FFFC82 /* MapViewController.m */; };
+		15AAC4F9153FF2CD007C4D61 /* RouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */; };
+		15AAC4FC1546894D007C4D61 /* RouteAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AAC4FB1546894D007C4D61 /* RouteAnnotationView.m */; };
 		15C29B61153658C5009901F9 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C29B60153658C5009901F9 /* Route.m */; };
 		15C29B65153674FC009901F9 /* RouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C29B64153674FC009901F9 /* RouteView.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,10 @@
 		152216B7152D41CE00FFFC82 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		152216B8152D41CE00FFFC82 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		1583D0DA153713F40017154A /* test2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = test2.gpx; path = ../../../Downloads/test2.gpx; sourceTree = "<group>"; };
+		15AAC4F7153FF2CD007C4D61 /* RouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotation.h; sourceTree = "<group>"; };
+		15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteAnnotation.m; sourceTree = "<group>"; };
+		15AAC4FA1546894D007C4D61 /* RouteAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotationView.h; sourceTree = "<group>"; };
+		15AAC4FB1546894D007C4D61 /* RouteAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteAnnotationView.m; sourceTree = "<group>"; };
 		15C29B5F153658C5009901F9 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = ../Route.h; sourceTree = "<group>"; };
 		15C29B60153658C5009901F9 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = ../Route.m; sourceTree = "<group>"; };
 		15C29B63153674FC009901F9 /* RouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteView.h; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 			children = (
 				15C29B5F153658C5009901F9 /* Route.h */,
 				15C29B60153658C5009901F9 /* Route.m */,
+				15AAC4FA1546894D007C4D61 /* RouteAnnotationView.h */,
+				15AAC4FB1546894D007C4D61 /* RouteAnnotationView.m */,
 				15C29B63153674FC009901F9 /* RouteView.h */,
 				15C29B64153674FC009901F9 /* RouteView.m */,
 				152216B7152D41CE00FFFC82 /* MapViewController.h */,
@@ -160,6 +168,8 @@
 				1522168F152AB0CF00FFFC82 /* SecondViewController.h */,
 				15221690152AB0CF00FFFC82 /* SecondViewController.m */,
 				15221692152AB0CF00FFFC82 /* second.png */,
+				15AAC4F7153FF2CD007C4D61 /* RouteAnnotation.h */,
+				15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */,
 				15221694152AB0CF00FFFC82 /* second@2x.png */,
 				15221677152AB0CF00FFFC82 /* Supporting Files */,
 			);
@@ -314,6 +324,8 @@
 				152216B9152D41CE00FFFC82 /* MapViewController.m in Sources */,
 				15C29B61153658C5009901F9 /* Route.m in Sources */,
 				15C29B65153674FC009901F9 /* RouteView.m in Sources */,
+				15AAC4F9153FF2CD007C4D61 /* RouteAnnotation.m in Sources */,
+				15AAC4FC1546894D007C4D61 /* RouteAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
