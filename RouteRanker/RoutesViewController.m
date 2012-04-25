@@ -7,13 +7,15 @@
 //
 
 #import "RoutesViewController.h"
-#import "route.h"
+#import "Route.h"
 
 @interface RoutesViewController ()
 
 @end
 
 @implementation RoutesViewController
+
+@synthesize routes = _routes;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
