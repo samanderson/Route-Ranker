@@ -59,7 +59,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteCell"];
     Route *route = [self.routes objectAtIndex:indexPath.row];
     cell.textLabel.text = route.name;
-    cell.detailTextLabel.text = route.timeArray 
+    cell.detailTextLabel.text = [[route.timeArray objectAtIndex:1] description];
     
     return cell;
 }
