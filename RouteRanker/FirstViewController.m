@@ -13,7 +13,7 @@
 @end
 
 @implementation FirstViewController
-
+@synthesize toggleButton;
 @synthesize track, routeName, routeNameText, trackDelegate, accuracy, GPSAccuracy;
 @synthesize tapRecognizer, locationManager, locationDelegate, geocoder;
 
@@ -25,6 +25,7 @@
         [button setTitle:@"Stop" forState: UIControlStateNormal];
         routeNameText.enabled = NO;
         routeNameText.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
+        GPSAccuracy.enabled = NO;
         [locationManager startUpdatingLocation];
         if(GPSAccuracy.selectedSegmentIndex == 0)
             accuracy = kCLLocationAccuracyNearestTenMeters;
@@ -52,13 +53,16 @@
         
         [trackDelegate setAcc: accuracy];
         [trackDelegate setStart: locationManager.location];
+        //[toggleButton setTitleColor:[UIColor colorWithRed:(180.0/255.0) green:(5.0/255.0) blue:(5.0/255.0) alpha:1.0] forState:UIControlStateNormal];
     }
     else {
         [button setTitle:@"Start" forState:UIControlStateNormal];
+        GPSAccuracy.enabled = YES;
         routeNameText.enabled = YES;
         routeNameText.backgroundColor = [UIColor whiteColor];
         routeNameText.text = @"";
         [locationManager stopUpdatingLocation];
+        //[toggleButton setTitleColor:[UIColor colorWithRed:(29.0/255.0) green:(199.0/255.0) blue:(34.0/255.0) alpha:1.0] forState:UIControlStateNormal];
     }
 }
 
@@ -75,7 +79,9 @@
     [self setLocationDelegate:[self.tabBarController.viewControllers objectAtIndex: 1]]; 
     locationManager.delegate = locationDelegate;
     geocoder = [[CLGeocoder alloc] init];
-
+    
+    //[toggleButton setTitleColor:[UIColor colorWithRed:(29.0/255.0) green:(199.0/255.0) blue:(34.0/255.0) alpha:1.0] forState:UIControlStateNormal];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -105,6 +111,8 @@
 {
     [self setGPSAccuracy:nil];
     [self setRouteNameText:nil];
+    [self setToggleButton:nil];
+    [self setToggleButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

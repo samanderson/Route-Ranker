@@ -29,6 +29,11 @@
 		152216B4152B6E2B00FFFC82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B3152B6E2B00FFFC82 /* MapKit.framework */; };
 		152216B6152B6E3E00FFFC82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152216B5152B6E3E00FFFC82 /* CoreLocation.framework */; };
 		152216B9152D41CE00FFFC82 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152216B8152D41CE00FFFC82 /* MapViewController.m */; };
+		15961C851549138B00F77D67 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 15961C841549138B00F77D67 /* icon.png */; };
+		15961C9215492E6900F77D67 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 15961C9115492E6900F77D67 /* graph.png */; };
+		15961C9415492E7500F77D67 /* connections.png in Resources */ = {isa = PBXBuildFile; fileRef = 15961C9315492E7500F77D67 /* connections.png */; };
+		15961C9615492EE300F77D67 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 15961C9515492EE300F77D67 /* world.png */; };
+		15961C9815492F5400F77D67 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 15961C9715492F5400F77D67 /* house.png */; };
 		15AAC4F9153FF2CD007C4D61 /* RouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */; };
 		15AAC4FC1546894D007C4D61 /* RouteAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AAC4FB1546894D007C4D61 /* RouteAnnotationView.m */; };
 		15C29B61153658C5009901F9 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C29B60153658C5009901F9 /* Route.m */; };
@@ -77,6 +82,11 @@
 		152216B7152D41CE00FFFC82 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		152216B8152D41CE00FFFC82 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		1583D0DA153713F40017154A /* test2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = test2.gpx; path = ../../../Downloads/test2.gpx; sourceTree = "<group>"; };
+		15961C841549138B00F77D67 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		15961C9115492E6900F77D67 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
+		15961C9315492E7500F77D67 /* connections.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connections.png; sourceTree = "<group>"; };
+		15961C9515492EE300F77D67 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		15961C9715492F5400F77D67 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		15AAC4F7153FF2CD007C4D61 /* RouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotation.h; sourceTree = "<group>"; };
 		15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteAnnotation.m; sourceTree = "<group>"; };
 		15AAC4FA1546894D007C4D61 /* RouteAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotationView.h; sourceTree = "<group>"; };
@@ -149,6 +159,7 @@
 		15221676152AB0CF00FFFC82 /* RouteRanker */ = {
 			isa = PBXGroup;
 			children = (
+				15961C8815492C6600F77D67 /* Images */,
 				15C29B5F153658C5009901F9 /* Route.h */,
 				15C29B60153658C5009901F9 /* Route.m */,
 				15AAC4FA1546894D007C4D61 /* RouteAnnotationView.h */,
@@ -163,14 +174,10 @@
 				15221685152AB0CF00FFFC82 /* MainStoryboard_iPad.storyboard */,
 				15221688152AB0CF00FFFC82 /* FirstViewController.h */,
 				15221689152AB0CF00FFFC82 /* FirstViewController.m */,
-				1522168B152AB0CF00FFFC82 /* first.png */,
-				1522168D152AB0CF00FFFC82 /* first@2x.png */,
 				1522168F152AB0CF00FFFC82 /* SecondViewController.h */,
 				15221690152AB0CF00FFFC82 /* SecondViewController.m */,
-				15221692152AB0CF00FFFC82 /* second.png */,
 				15AAC4F7153FF2CD007C4D61 /* RouteAnnotation.h */,
 				15AAC4F8153FF2CD007C4D61 /* RouteAnnotation.m */,
-				15221694152AB0CF00FFFC82 /* second@2x.png */,
 				15221677152AB0CF00FFFC82 /* Supporting Files */,
 			);
 			path = RouteRanker;
@@ -204,6 +211,22 @@
 				152216A5152AB0CF00FFFC82 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15961C8815492C6600F77D67 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1522168B152AB0CF00FFFC82 /* first.png */,
+				15961C9315492E7500F77D67 /* connections.png */,
+				15961C9115492E6900F77D67 /* graph.png */,
+				15961C9515492EE300F77D67 /* world.png */,
+				15961C9715492F5400F77D67 /* house.png */,
+				15221694152AB0CF00FFFC82 /* second@2x.png */,
+				1522168D152AB0CF00FFFC82 /* first@2x.png */,
+				15221692152AB0CF00FFFC82 /* second.png */,
+				15961C841549138B00F77D67 /* icon.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +306,11 @@
 				1522168E152AB0CF00FFFC82 /* first@2x.png in Resources */,
 				15221693152AB0CF00FFFC82 /* second.png in Resources */,
 				15221695152AB0CF00FFFC82 /* second@2x.png in Resources */,
+				15961C851549138B00F77D67 /* icon.png in Resources */,
+				15961C9215492E6900F77D67 /* graph.png in Resources */,
+				15961C9415492E7500F77D67 /* connections.png in Resources */,
+				15961C9615492EE300F77D67 /* world.png in Resources */,
+				15961C9815492F5400F77D67 /* house.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

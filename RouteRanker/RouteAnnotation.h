@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "Route.h"
-#import "RouteView.h"
 
 @interface RouteAnnotation : NSObject <MKAnnotation> {
     CLLocationCoordinate2D coordinate;

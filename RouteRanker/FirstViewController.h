@@ -34,6 +34,7 @@
 @property CLLocationAccuracy accuracy;
 @property (weak, nonatomic) IBOutlet UITextField *routeNameText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *GPSAccuracy;
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property CLGeocoder *geocoder;
 @property UIGestureRecognizer *tapRecognizer;

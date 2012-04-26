@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "RouteAnnotation.h"
 
 @interface Route : NSObject <MKOverlay>
 {
@@ -26,6 +27,7 @@
 -(id) initWithStartPoint: (CLLocation *) loc;
 
 -(MKMapRect) addPoint: (CLLocation *) loc;
+-(double) getTotalDistanceTraveled;
 
 -(void) lockForReading;
 
@@ -38,5 +40,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 -(void) unlockForReading;
+
+- (void) addAnnotation: (RouteAnnotation *) a;
 
 @end

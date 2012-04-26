@@ -14,14 +14,16 @@
 #import "FirstViewController.h"
 
 
-@interface MapViewController : UIViewController <ToggleTracking, CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <ToggleTracking,MKMapViewDelegate, CLLocationManagerDelegate>
 {
     BOOL track;
     NSString *routeName;
     CLLocationAccuracy accuracy;
     @private 
-    Route *route;
+    MKMapView *map;
     RouteView *routeView;
+    Route * currRoute;
+    
 
 }
 @property (nonatomic, strong) NSMutableArray *annotations;
@@ -30,8 +32,10 @@
 @property BOOL track;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPinButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *mapTitle;
+@property (nonatomic, retain) IBOutlet MKMapView *map;
 @property CLLocationAccuracy accuracy;
 @property CLLocation *currLocation;
+@property (nonatomic, retain)CLLocationManager *locationManager;
 -(void) updateUserLocation;
 @end
 
