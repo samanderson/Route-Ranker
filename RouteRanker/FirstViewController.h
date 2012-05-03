@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "gps.h"
+#import "Route.h"
+
+#import "AutoAnnotation.h"
+#import "RouteData.h"
+#import "MapPointData.h"
+#import "AnnotationData.h"
 
 @protocol ToggleTracking <NSObject>
 @required
 - (void) toggleTracking;
 - (void) setName: (NSString *)name;
-- (void) setAcc: (CLLocationAccuracy)accuracy;
 - (void) setStart: (CLLocation *)start;
 @end
 
@@ -25,6 +31,7 @@
     CLLocationAccuracy accuracy;
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
+    NSManagedObjectContext* managedObjectContext;
 }
 
 @property id trackDelegate;
@@ -37,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property CLGeocoder *geocoder;
+@property (nonatomic, retain) NSManagedObjectContext* managedObjectContext;
 @property UIGestureRecognizer *tapRecognizer;
 
 @end

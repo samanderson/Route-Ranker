@@ -1,20 +1,20 @@
 //
-//  RouteAnnotation.m
+//  AutoAnnotation.m
 //  RouteRanker
 //
-//  Created by Chuck Anderson on 4/19/12.
+//  Created by Chuck Anderson on 5/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "RouteAnnotation.h"
+#import "AutoAnnotation.h"
 
-@interface RouteAnnotation ()
+@interface AutoAnnotation ()
 
 @end
 
-@implementation RouteAnnotation
+@implementation AutoAnnotation
 
-@synthesize coordinate, time, title, subtitle;
+@synthesize coordinate, time, title;
 
 - (id)initWithCoordinateAndTime:(CLLocationCoordinate2D)coord :(NSDate *)t {
     coordinate = coord;
@@ -23,7 +23,7 @@
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
     NSString *formattedDateString = [dateFormatter stringFromDate:t];
-    subtitle = formattedDateString;
+    title = formattedDateString;
     return self;
 }
 

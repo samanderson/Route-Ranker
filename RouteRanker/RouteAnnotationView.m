@@ -7,7 +7,6 @@
 //
 
 #import "RouteAnnotationView.h"
-#import "RouteAnnotation.h"
 
 @implementation RouteAnnotationView
 

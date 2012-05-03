@@ -15,17 +15,17 @@
 @implementation FirstViewController
 @synthesize toggleButton;
 @synthesize track, routeName, routeNameText, trackDelegate, accuracy, GPSAccuracy;
-@synthesize tapRecognizer, locationManager, locationDelegate, geocoder;
-
+@synthesize tapRecognizer, locationManager, locationDelegate, geocoder, managedObjectContext;
 
 - (IBAction)TrackingStarted:(id)sender {
     [trackDelegate toggleTracking];
     UIButton *button = (UIButton *) sender;
-    if([button.titleLabel.text isEqualToString: @"Start"]) {
+    track = !track;
+    // START
+    if(track) {
         [button setTitle:@"Stop" forState: UIControlStateNormal];
         routeNameText.enabled = NO;
         routeNameText.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
-        GPSAccuracy.enabled = NO;
         [locationManager startUpdatingLocation];
         if(GPSAccuracy.selectedSegmentIndex == 0)
             accuracy = kCLLocationAccuracyNearestTenMeters;
@@ -33,6 +33,7 @@
             accuracy = kCLLocationAccuracyBest;
         else
             accuracy = kCLLocationAccuracyBestForNavigation;
+        locationManager.desiredAccuracy = accuracy;
         while (!locationManager.location) {
             // get a location
         }
@@ -50,19 +51,29 @@
                  [trackDelegate setName: routeName];
              }];
         }
-        
-        [trackDelegate setAcc: accuracy];
         [trackDelegate setStart: locationManager.location];
         //[toggleButton setTitleColor:[UIColor colorWithRed:(180.0/255.0) green:(5.0/255.0) blue:(5.0/255.0) alpha:1.0] forState:UIControlStateNormal];
     }
+    // STOP
     else {
         [button setTitle:@"Start" forState:UIControlStateNormal];
-        GPSAccuracy.enabled = YES;
         routeNameText.enabled = YES;
         routeNameText.backgroundColor = [UIColor whiteColor];
         routeNameText.text = @"";
         [locationManager stopUpdatingLocation];
         //[toggleButton setTitleColor:[UIColor colorWithRed:(29.0/255.0) green:(199.0/255.0) blue:(34.0/255.0) alpha:1.0] forState:UIControlStateNormal];
+    }
+}
+- (IBAction)toggleAccuracy:(id)sender {
+    if (track) {
+        if(GPSAccuracy.selectedSegmentIndex == 0)
+            accuracy = kCLLocationAccuracyNearestTenMeters;
+        else if (GPSAccuracy.selectedSegmentIndex == 1)
+            accuracy = kCLLocationAccuracyBest;
+        else
+            accuracy = kCLLocationAccuracyBestForNavigation;
+        locationManager.desiredAccuracy = accuracy;
+        //NSLog(@"%@", locationManager.desiredAccuracy == kCLLocationAccuracyBest ? @"YES" : @"NO");
     }
 }
 
@@ -125,5 +136,7 @@
         return YES;
     }
 }
+
+
 
 @end

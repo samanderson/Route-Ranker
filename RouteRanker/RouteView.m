@@ -71,7 +71,7 @@ static BOOL lineIntersectsRect(MKMapPoint p0, MKMapPoint p1, MKMapRect r)
     // While it is possible to just add all the points and let CoreGraphics 
     // handle clipping and flatness, it is much faster to do it yourself:
     //
-    if (pointCount < 2)
+    if (pointCount < 3)
         return NULL;
     
     CGMutablePathRef path = NULL;
