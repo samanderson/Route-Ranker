@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Nick">
+  <wpt lat="40.34775" lon="-74.66239">
+    <name>POINT_1</name>
+    <time>2012-04-11T22:03:00Z</time>
+  </wpt>
+  <wpt lat="40.34873" lon="-74.66308">
+    <name>POINT_2</name>
+    <time>2012-04-11T22:05:00Z</time>
+  </wpt>
+  <wpt lat="40.34926" lon="-74.66128">
+    <name>POINT_3</name>
+    <time>2012-04-11T22:07:00Z</time>
+  </wpt>
+  <wpt lat="40.35057" lon="-74.6565">
+    <name>POINT_4</name>
+    <time>2012-04-11T22:09:00Z</time>
+  </wpt>
+  <wpt lat="40.35206" lon="-74.65179">
+    <name>POINT_5</name>
+    <time>2012-04-11T22:11:00Z</time>
+  </wpt>
+</gpx>

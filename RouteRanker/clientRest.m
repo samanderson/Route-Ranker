@@ -7,9 +7,7 @@
 //
 
 #import "clientRest.h"
-#import "SBJson.h"
-#import "URLRequest.h"
-#import "Route.h"
+
 
 
 @implementation clientRest
@@ -93,7 +91,7 @@ baseURL = @"http://ec2-177-71-143-149.sa-east-1.compute.amazonaws.com:8080/";
 
 }
 
--(bool) addPath:(Route *)path ofUser:(int)id {
+-(bool) addPath:(Route *)path withId:(int)idPath ofUser:(int)id {
     URLRequest *request = [[URLRequest alloc] init];
     NSString *dir = @"addPath";
     NSString *url = [baseURL stringByAppendingString: dir];
@@ -102,6 +100,7 @@ baseURL = @"http://ec2-177-71-143-149.sa-east-1.compute.amazonaws.com:8080/";
     MKMapPoint *points = path.points;
     NSUInteger numPoints = path.numPoints;
     NSMutableArray *times = path.timeArray;
+    NSString *distance = [[NSNumber numberWithDouble:[path getTotalDistanceTraveled]] stringValue];
     NSMutableArray *annotations = path.annotations;
     NSUInteger numAnnotations = path.numAnnotations;
     NSString *name = path.name;
@@ -123,24 +122,43 @@ baseURL = @"http://ec2-177-71-143-149.sa-east-1.compute.amazonaws.com:8080/";
         timesFormat = [timesFormat stringByAppendingString:@"#"];
     }
     
-    
     //Annotations
+    
     NSString *annotationsFormat = [[NSString alloc] init];
-    for (int i = 0; i < numAnnotations; i++) {
-        RouteAnnotation *current = [annotations objectAtIndex:i];
-        annotationsFormat = [NSString stringWithFormat:@"%s#%s#%s",
-                             [current.time description], current.title, current.subtitle]; 
+    if (numAnnotations > 0) {
+        for (int i = 0; i < numAnnotations; i++) {
+            RouteAnnotation *current = [annotations objectAtIndex:i];
+            annotationsFormat = [NSString stringWithFormat:@"%s#%s#%s#%d#%d",
+                                 [current.time description], current.title, current.subtitle,
+                                 current.coordinate.latitude, current.coordinate.longitude]; 
+        }
     }
+    else 
+        annotationsFormat = @"NULL";
     
     NSString *values =  [NSString stringWithFormat:
-                         @"userId=%d&name=%s&numPoints=%d&numAnnotations=%d&points=%s&timeData=%s&annotations=%s",
-                         id, name, numPoints, numAnnotations, pointsFormat, timesFormat, annotationsFormat];
+                         @"idPath=%d&userId=%d&name=%@&points=%@&times=%@&distance=%@&numPoints=%d&numAnnotations=%d&annotations=%@",
+                         idPath, id, name, pointsFormat,timesFormat,distance, numPoints,
+                         numAnnotations, annotationsFormat];
+    
+    NSString *data = [request sendRequest:url withMethod:@"post" andValues:values];
+    
+    /*
+        
+    
+    //Annotations
+    
+    
+    NSString *values =  [NSString stringWithFormat:
+                         @"idPath=%d&userId=%d&name=%s&numPoints=%d&numAnnotations=%d&points=%s&timeData=%s&annotations=%s",
+                         idPath, id, name, numPoints, numAnnotations, pointsFormat, timesFormat, annotationsFormat];
     NSString *data = [request sendRequest:url withMethod:@"post" andValues:values];
     
     if (data == @"1")
         return TRUE;
     else
         return FALSE;
+     */
 }
 
 @end

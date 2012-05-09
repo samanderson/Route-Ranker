@@ -61,9 +61,17 @@
             routeData.numAnnotations = [NSNumber numberWithInt: currRoute.numAnnotations];
             routeData.numPoints = [NSNumber numberWithInt: currRoute.numPoints];
             routeData.time = [NSNumber numberWithDouble:[currRoute getTotalTimeElapsed]];
-        
+           
+            
+            //Save to server
+            clientRest *client = [[clientRest alloc] init];
+            int idOwner = [routeData.owner intValue];
+            int routeNumber = [routeData.owner intValue];
+            [client addPath:currRoute withId: routeNumber ofUser: idOwner];
+            
             MKMapPoint *points = currRoute.points;
             NSMutableArray *times = currRoute.timeArray;
+            
             NSMutableArray *mapPoints = [NSMutableArray arrayWithCapacity:currRoute.numPoints];
             for (int i = 0; i < currRoute.numPoints; i++) {
                 MapPointData *mapPoint = [NSEntityDescription insertNewObjectForEntityForName:@"MapPointData" inManagedObjectContext:context];
@@ -71,6 +79,7 @@
                 mapPoint.timestamp = [times objectAtIndex:i];
                 mapPoint.x = [NSNumber numberWithDouble:points[i].x];
                 mapPoint.y = [NSNumber numberWithDouble:points[i].y];
+                NSLog(@"MP: ");
                 mapPoint.route = routeData;
                 [mapPoints addObject:mapPoint];
             }
@@ -158,6 +167,7 @@
         //NSLog(@"Distance between points %f", [currLocation distanceFromLocation:prevLocation]);
         //if([currLocation distanceFromLocation:prevLocation] < (100 * KALMAN_TIME))
         //{
+        
             update_velocity2d(filter, currLocation.coordinate.latitude, currLocation.coordinate.longitude, KALMAN_TIME);
             if (numPoints % CRUMB_POINTS == 0 && currLocation.coordinate.latitude != prevLocation.coordinate.latitude && currLocation.coordinate.longitude != prevLocation.coordinate.longitude) {
                 NSDate* today = [NSDate date];
@@ -165,6 +175,7 @@
                 [currRoute addAnnotation:autoAnnotation];
                 [map addAnnotation:autoAnnotation];
             }
+         
         //} else {
         //    update_velocity2d(filter, prevLocation.coordinate.latitude, prevLocation.coordinate.longitude, KALMAN_TIME);            
         //}

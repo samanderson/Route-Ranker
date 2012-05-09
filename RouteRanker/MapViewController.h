@@ -19,6 +19,7 @@
 #import "MapPointData.h"
 #import "AnnotationData.h"
 #import "AppDelegate.h"
+#import "clientRest.h"
 
 @interface MapViewController : UIViewController <ToggleTracking,MKMapViewDelegate, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate>
 {

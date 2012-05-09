@@ -185,6 +185,7 @@
 		BA74615B15586EFA00EFF915 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		BA74615C15586EFA00EFF915 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		BAB66E561558692E0060187C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BABEDBFD155AB579009D5823 /* test2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = test2.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +218,7 @@
 		15221661152AB0CF00FFFC82 = {
 			isa = PBXGroup;
 			children = (
+				BABEDBFD155AB579009D5823 /* test2.gpx */,
 				BAB66E561558692E0060187C /* CoreData.framework */,
 				152216B5152B6E3E00FFFC82 /* CoreLocation.framework */,
 				152216B3152B6E2B00FFFC82 /* MapKit.framework */,
