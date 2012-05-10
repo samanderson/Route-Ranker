@@ -62,12 +62,12 @@
             routeData.numPoints = [NSNumber numberWithInt: currRoute.numPoints];
             routeData.time = [NSNumber numberWithDouble:[currRoute getTotalTimeElapsed]];
            
-            
             //Save to server
             clientRest *client = [[clientRest alloc] init];
             int idOwner = [routeData.owner intValue];
-            int routeNumber = [routeData.owner intValue];
-            [client addPath:currRoute withId: routeNumber ofUser: idOwner];
+            int routeNumber = [routeData.idNo intValue];
+            //[client addPath:currRoute withId: routeNumber ofUser: idOwner];
+           [client getPathWithId:107 ofUser:idOwner];
             
             MKMapPoint *points = currRoute.points;
             NSMutableArray *times = currRoute.timeArray;
@@ -79,7 +79,6 @@
                 mapPoint.timestamp = [times objectAtIndex:i];
                 mapPoint.x = [NSNumber numberWithDouble:points[i].x];
                 mapPoint.y = [NSNumber numberWithDouble:points[i].y];
-                NSLog(@"MP: ");
                 mapPoint.route = routeData;
                 [mapPoints addObject:mapPoint];
             }

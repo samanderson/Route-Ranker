@@ -22,6 +22,8 @@
         [request setHTTPMethod: @"post"];
         [request setHTTPBody: myRequestData];
     }
+        
+    
     NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: &response error: &error];
     NSString *strData = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     return strData;
